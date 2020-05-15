@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+html, body {
+    background: url('img/background.png');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    width: 100%;
+    height: 100%;
+}
+.ingame {
+    background: url('img/backgroundingame.png');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    width: 100%;
+    height: 100%;
+}
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+/* LOGOWANIE I REJESTRACJA */
+#logowanie {
+    border: 2px solid #000;
+    box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    text-align: center;
+    width: 35rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+    box-sizing: border-box;
+    padding: 2rem 4rem;
+    position: relative;
+    font-size: 20px;
+    background-color: white;
+}
+#logowanie a {
+    color: #ff8a01;
+    text-decoration: none;
+}
+#rejestracja {
+     border: 2px solid #000;
+    box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+    text-align: center;
+    width: 35rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+    box-sizing: border-box;
+    padding: 2rem 4rem;
+    position: relative;
+    font-size: 20px;
+    background-color: white;
+}
+input[type=text], input[type=password]{
+    position: relative;
+    margin: 20px auto 5px auto;
+    width: 80%;
+    height: 10%;
+    background-color: #efefef;
+    color: #666;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 20px;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    padding: 10px;
+}
+input[type=text]:focus, input[type=password]:focus {
+    box-shadow: 0px 0px 15px 2px rgba(204,204,204,0.9);
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(204,204,204,0.9);
+    -moz-box-shadow: 0px 0px 15px 2px rgba(204,204,204,0.9);
+    border: 2px solid #004f61;
+    background-color: #f3e0cb;
+    color:#004f61;
+}
+input[type=submit] {
+    width: 80%;
+    background-color: #ffb55e;
+    font-size: 20px;
+    padding: 15px 10px;
+    color: white;
+    font-weight: 700;
+    margin: 30px auto 15px auto;
+    letter-spacing: 4px;
+}
+.credits {
+    width: 50%;
+    background-color: #ffb55e;
+    font-size: 20px;
+    padding: 5px 0;
+    color: white;
+    font-weight: 700;
+    margin: 30px auto 15px auto;
+    letter-spacing: 4px;
+	cursor: pointer;
+}
+input[type=submit]:hover, .credits:hover {
+    background-color: #ff8a01;
+}
+input[type=submit]:focus {
+     box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+    -webkit-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+    -moz-box-shadow: 0px 0px 15px 5px rgba(204,204,204,0.9);
+}
+input::-webkit-input-placeholder
+{
+    color: #999;
+}
+input:focus::-webkit-input-placeholder
+{
+    color: #004f61;
+}
+.error {
+    color: red;
+}
+.vid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	display: none;
+	
+}
+/* OTHER */
+.window {
+    -webkit-box-shadow: 0px 0px 30px 10px rgba(255,234,0,1);
+    -moz-box-shadow: 0px 0px 30px 10px rgba(255,234,0,1);
+    box-shadow: 0px 0px 30px 10px rgba(255,234,0,1);
+    
+}
+.belka {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255,234,0,1);
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+}
+.belka > ul {
+    width: 100%;
+    height: 50px;
+    padding-left: 5px;
+}
+.belka > ul > li {
+    list-style-type: none;
+    display: inline-block;
+    width: 19%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    text-align: center;
+    background-image: url(img/button.png);
+    background-size: cover;
+}
+.belka > ul > li > a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+.belka > ul > li > a:visited{
+    color: white;
+}
+.belka > ul > li:hover {
+    opacity : 0.90;
+    filter : alpha(opacity=70);
+}
+.adding {
+    width: 35%;
+    height: 100%;
+    text-align: center;
+    float:left;
+}
+.purchasing {
+    text-align: center;
+    height: 100%;
+    width: 60%;
+    float:right;
+    
+}
+.alledrogo {
+margin-right: 5px;}
+select {
+    width: 80%;
+    margin-top: 20px;
+}
+table {
+    height: 80%;
+}
+table tr {
+    height: 40px;
+}
+table tr td {
+    height: 40px;
+}

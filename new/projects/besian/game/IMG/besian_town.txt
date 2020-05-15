@@ -1,0 +1,12 @@
+Od lewej:
+Medyk
+Kowal
+Karczma
+Arena
+Aukcja
+
+eq
+mapa
+umiejet
+quest
+wyloguj
