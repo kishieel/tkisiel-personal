@@ -2,10 +2,10 @@ function animateLeft($src, $tgt){
     var $parent = $src.parent();
     var width = $parent.width();
     var srcWidth = $src.width();
-    
+
     $src.css({position: 'relative'});
-    $tgt.hide()/*.appendTo($parent)*/.css({left: width, position: 'relative'});
-    
+    $tgt.hide().css({left: width, position: 'relative'});
+
     $src.animate({left : -width}, 500, function(){
         $src.hide();
         $src.css({left: null, position: null});
@@ -14,19 +14,12 @@ function animateLeft($src, $tgt){
         $tgt.css({left: null, position: null});
     });
 }
+
 let projectsInterval = null;
-let currentPro = $('.ps-section .projects').children().eq(0),
-	nextPro = $('.ps-section .projects').children().eq(1);
+let currentPro = $('.ps-section .projects').children().eq(0);
+let nextPro = $('.ps-section .projects').children().eq(1);
+
 function startProjectsAnimate() {
-	// setTimeout(() => {
-	// 	if($('.ps-section .projects').children().length>1) animateLeft(currentPro, nextPro);
-	// 	currentPro = nextPro;
-	//     let pid = currentPro.index();
-	//     let mct = $('.ps-section .projects').children().length;
-	//     pid++;
-	//     if(pid >= mct) pid = 0;
-	// 		nextPro = $('.ps-section .projects').children().eq(pid);
-	// }, 500);
 	projectsInterval = setInterval(() => {
 	    if($('.ps-section .projects').children().length>1) animateLeft(currentPro, nextPro);
 
@@ -39,10 +32,12 @@ function startProjectsAnimate() {
 
 	}, 2000);
 }
+
 function endProjectsAnimate() {
 	clearInterval(projectsInterval);
 	projectsInterval = null;
 }
+
 $(document).ready(() => {
 	(function(){
 		{
@@ -60,15 +55,6 @@ $(document).ready(() => {
 	   			$(".about .holder").addClass("un-animation");
 	   			$(".about .holder").removeClass("animation");
 	   		}
-   		}
-   		{
-			//$('.ps-section .projects').children().nextAll(1).hide();
-   			// startProjectsAnimate();
-   			// $('.ps-section .projects .project').on("mouseenter", () => {
-   			// 	endProjectsAnimate();   				
-   			// }).on("mouseleave", () => {
-   			// 	if(projectsInterval == null) startProjectsAnimate();
-   			// });
    		}
    		{
    			$(".menu").on("click", function() {
@@ -93,9 +79,6 @@ $(document).ready(() => {
             			scrollTop: $("#contact").offset().top
                  	}, 1000);
                 }
-                // $('html, body').animate({
-                //     scrollTop: $("#div1").offset().top
-                // }, 2000);
             });
    		}
 	})();
@@ -103,7 +86,7 @@ $(document).ready(() => {
 	let yMousePos = 0,
 		lastScrolledTop = 0;
 
-	$(window).scroll((e) => {  
+	$(window).scroll((e) => {
 		let wh = $(window).height(),
 		   	ws = $(window).scrollTop();
 
@@ -121,7 +104,6 @@ $(document).ready(() => {
 	  		$('.ps-span .projects').css({top: -moveProSkY});
 	  		$('.ps-span .skills').css({top: -moveProSkY});
 		}
-   		
    		{
    			let ht1 = $(".about .holder").eq(0).offset().top,
    			    hh1 = $(".about .holder").eq(0).outerHeight(),
@@ -137,30 +119,17 @@ $(document).ready(() => {
 	   		}
    		}
 
-   		{
-   			// let ht1 = $('.ps-section .projects').offset().top,
-   			//     hh1 = $('.ps-section .projects').outerHeight();
-
-	    	// if(ws > ( ht1 - wh + 100)) {
-	    	// 	if(!($('.ps-section .projects').children().hasClass('current'))) {
-		    // 		$('.ps-section .projects').children().removeClass('current').removeClass('next');
-		    // 		$('.ps-section .projects').children().eq(0).addClass('current');
-		    // 		$('.ps-section .projects').children().eq(1).addClass('next');
-	    	// 	}
-	    	// }
-   		}
-
    		$(".text-underline").each((e)=> {
    			let ht = $(".text-underline").eq(e).offset().top,
 	   			hh = $(".text-underline").eq(e).outerHeight();
-	   		
+
 	   		if(ws > ( ht - wh)) {
 				$(".text-underline").eq(e).addClass("animation");
 	   		} else {
 	   			$(".text-underline").eq(e).removeClass("animation");
 	   		}
    		});
-	   	
+
 	}).mousemove((e) => {
     	yMousePos = e.pageY;
 		let moveHelloX = e.pageX * 0.02,
@@ -194,20 +163,4 @@ $(document).ready(() => {
 		}, 50);
 	}
 
-	{
-		// let inter = setInterval(() => {
-		// 	let pid = $('.ps-section .projects .current').index();
-		// 	let mct = $('.ps-section .projects').children().length;
-		// 	pid++;
-		// 	if(pid >= mct) pid = 0;
-		// 	$('.ps-section .projects .current').removeClass('current');
-		// 	$('.ps-section .projects').children().eq(pid).addClass('current');
-		// 	pid++;
-		// 	if(pid >= mct) pid = 0;		
-		// 	$('.ps-section .projects .next').removeClass('next');	
-		// 	$('.ps-section .projects').children().eq(pid).addClass('next');
-		// }, 5000);
-	}
-
-	
 });
