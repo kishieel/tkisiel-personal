@@ -2,14 +2,9 @@
 	"name": "tkisiel-personal",
 	"version": "2.0.0",
 	"description": "Tomasz Kisiel - portfolio",
-	"main": "index.js",
 	"scripts": {
-		"start": "react-script start",
-		"build": "react-script build"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/TomaszKisiel/tkisiel-personal.git"
+		"start": "react-scripts start",
+	    "build": "react-scripts build"
 	},
 	"keywords": [
 		"portfolio",
@@ -18,12 +13,27 @@
 	],
 	"author": "Tomasz Kisiel",
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/TomaszKisiel/tkisiel-personal/issues"
-	},
-	"homepage": "https://github.com/TomaszKisiel/tkisiel-personal#readme",
 	"dependencies": {
+	    "react": "^16.13.1",
+	    "react-dom": "^16.13.1",
+	    "react-scripts": "3.4.1",
 		"bootstrap": "^4.5.0",
-		"react-bootstrap": "^1.0.1"
-	}
+		"react-bootstrap": "^1.0.1",
+		"node-sass": "^4.14.1"
+	},
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+	"browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    }
 }

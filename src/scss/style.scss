@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+$web-primary: #eb9543;
+
+$theme-colors: (
+  "web-primary": $web-primary,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	margin: 0;
+}
+
+.sidebar {
+	position: fixed;
+	width: 280px;
+	height: 100vh;
+	background: $web-primary;
+	overflow: hidden;
+	border-right: 5px solid darken($web-primary, 12);
+	color: #fff;
+	text-align: center;
+}
+
+.content {
+	margin-left: 280px;
+}
+
+.profile-photo {
+	max-width: 160px;
+	border-radius: 50%;
+}
+
+.social-circle {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: white;
+	display: inline-block;
+	padding: 8px;
+}
