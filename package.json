@@ -1,0 +1,24 @@
+{
+  "name": "tkisiel-personal",
+  "version": "2.0.0",
+  "description": "My personal web page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomaszKisiel/tkisiel-personal.git"
+  },
+  "keywords": [
+    "portfolio",
+    "personal",
+    "webpage"
+  ],
+  "author": "Tomasz Kisiel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TomaszKisiel/tkisiel-personal/issues"
+  },
+  "homepage": "https://github.com/TomaszKisiel/tkisiel-personal#readme"
+}
