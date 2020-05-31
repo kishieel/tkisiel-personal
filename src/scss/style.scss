@@ -71,6 +71,15 @@ h1, h2, h3, h4, h5, h6 {
 	transition: .2s ease-in-out;
 
 	&:hover {
-		
+		transform: scale(1.2) rotate(5deg);
+	}
+}
+
+.carrot-brand {
+	cursor: pointer;
+	transition: .7s ease-out;
+
+	&:hover {
+		transform: rotate(360deg)
 	}
 }

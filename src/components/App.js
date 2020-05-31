@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Nav, Button, Card, Form, Container, Row, Col } from 'react-bootstrap'
+import { OverlayTrigger, Tooltip, Jumbotron, Nav, Button, Card, Form, Container, Row, Col } from 'react-bootstrap'
 import profilePhoto from '../img/profile_photo_2.jpg'
 import ezakrystiaLogo from '../img/ezakrystia_logo.png'
 import carrotGardenLogo from '../img/carrot_garden_logo.png'
@@ -9,6 +9,20 @@ import carrotHRPhoto from '../img/carrot_hr_photo.png'
 import { ReactComponent as GitIcon, gitIcon } from '../img/github-alt-brands.svg'
 import { ReactComponent as LinkedInIcon } from '../img/linkedin-in-brands.svg'
 import { ReactComponent as MailIcon } from '../img/envelope-solid.svg'
+import { ReactComponent as CssIcon } from '../img/css3-alt-brands.svg'
+import { ReactComponent as HtmlIcon } from '../img/html5-brands.svg'
+import { ReactComponent as JavaIcon } from '../img/java-brands.svg'
+import { ReactComponent as JSIcon } from '../img/js-square-brands.svg'
+import { ReactComponent as NodeIcon } from '../img/node-js-brands.svg'
+import { ReactComponent as PhpIcon } from '../img/php-brands.svg'
+import { ReactComponent as ReactIcon } from '../img/react-brands.svg'
+import { ReactComponent as SassIcon } from '../img/sass-brands.svg'
+import { ReactComponent as LaravelIcon } from '../img/laravel-brands.svg'
+import { ReactComponent as PythonIcon } from '../img/python-brands.svg'
+import { ReactComponent as DBIcon } from '../img/database-solid.svg'
+import { ReactComponent as NpmIcon } from '../img/npm-brands.svg'
+import { ReactComponent as CarrotIcon } from '../img/carrot-solid.svg'
+
 
 const ProjectCard = ( props ) => {
 	const { title, children, link, img } = props
@@ -44,21 +58,28 @@ const SocialCircle = ( props ) => {
 const Sidebar = () => {
 	return (<>
 		<nav className="sidebar p-3">
-			<h4 className="pt-4">Tomasz Kisiel</h4>
-			<img className="profile-photo pt-3" src={ profilePhoto } alt="profile photo" />
-			<p className="font-weight-light pt-3">Hi! My name is Tomasz Kisiel. I'm fullstack web develper. Welcome to my personal web page.</p>
-			<div className="align-middle">
-				<SocialCircle link="https://github.com/TomaszKisiel" svg={
-					<GitIcon className="align-top" fill="#eb9543"/>
-				}/>
-				<SocialCircle link="https://www.linkedin.com/in/tomasz-kisiel/" svg={
-					<LinkedInIcon className="align-top" fill="#eb9543"/>
-				}/>
-				<SocialCircle link="mailto:tkisle5w4@yahoo.com" svg={
-					<MailIcon className="align-top" fill="#eb9543"/>
-				}/>
+			<div className="position-relative pb-md-5" style={{ height: "100%" }}>
+				<h4 className="pt-4">Tomasz Kisiel</h4>
+				<img className="profile-photo pt-3" src={ profilePhoto } alt="profile photo" />
+				<p className="font-weight-light pt-3">Hi! My name is Tomasz Kisiel. I'm fullstack web develper. Welcome to my personal web page.</p>
+				<div className="align-middle">
+					<SocialCircle link="https://github.com/TomaszKisiel" svg={
+						<GitIcon className="align-top" fill="#eb9543"/>
+					}/>
+					<SocialCircle link="https://www.linkedin.com/in/tomasz-kisiel/" svg={
+						<LinkedInIcon className="align-top" fill="#eb9543"/>
+					}/>
+					<SocialCircle link="mailto:tkisle5w4@yahoo.com" svg={
+						<MailIcon className="align-top" fill="#eb9543"/>
+					}/>
+				</div>
+				<hr/>
+				<div className="text-center d-none d-md-block" style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
+					<CarrotIcon className="px-2 carrot-brand"  style={{ height: 32, color: "white" }}/>
+					<CarrotIcon className="px-2 carrot-brand"  style={{ height: 32, color: "white" }}/>
+					<CarrotIcon className="px-2 carrot-brand"  style={{ height: 32, color: "white" }}/>
+				</div>
 			</div>
-			<hr/>
 		</nav>
 	</>)
 }
@@ -70,7 +91,7 @@ const Content = () => {
 				<h1>Tomasz Kisiel</h1>
 				<div className="pt-2" style={{ fontSize: 26, fontWeight: 300 }}>Fullstack Web Developer</div>
 				<p className="pt-2">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					I am a young self-taught programmer. I'm mainly intrested in frontend and interactive application that can simplify routine activities performed every day. I can create pages and applications presenting the required content and interacting with the user. I always try to optimize my code to make it as efficient as possible and meet the prevailing standards. I am still learning and currently I am looking for my first job in the profession.
 				</p>
 				<Button className="px-3" variant="web-primary" style={{ color: "#fff" }}>CONTACT ME</Button>
 			</Jumbotron>
@@ -83,27 +104,58 @@ const Content = () => {
 				</Row>
 				<Row className="pt-3">
 					<Col>
-						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p className="m-0">
+							I developed my skills on my own and at the same time tried to make them suit the needs of potential employers and clients. I create applications using the latest technologies to ensure maximum comfort and satisfaction of people for whom it performs tasks. You can see the base list of my skills below.</p>
 					</Col>
 				</Row>
 				<Row>
-					<Col xs={12} sm={6} lg={4}>
-						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<Col className="pt-3" xs={12} sm={6} lg={4}>
+						<p className="mb-2" style={{ height: 32 }}>
+							<HtmlIcon className="pr-2"  style={{ height: "100%", color: "#DE6E3C" }}/>
+							<CssIcon style={{ height: "100%", color: "#53A7DC" }}/>
+						</p>
+						<h6 className="mb-2">HTML & CSS</h6>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</Col>
-					<Col xs={12} sm={6} lg={4}>
-						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<Col className="pt-3" xs={12} sm={6} lg={4}>
+						<p className="mb-2" style={{ height: 32 }}>
+							<SassIcon style={{ height: "100%", color: "#cc6699" }}/>
+						</p>
+						<h6 className="mb-2">Sass & Bootstrap</h6>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</Col>
-					<Col xs={12} sm={6} lg={4}>
-						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<Col className="pt-3" xs={12} sm={6} lg={4}>
+						<p className="mb-2" style={{ height: 32 }}>
+							<JSIcon className="pr-2" style={{ height: "100%", color: "#F1DE4F" }}/>
+							<NodeIcon className="pr-2" style={{ height: "100%", color: "#54B689" }}/>
+							<NpmIcon style={{ height: "100%", color: "#cb3837" }}/>
+						</p>
+						<h6 className="mb-2">JS & Node</h6>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</Col>
-					<Col xs={12} sm={6} lg={4}>
-						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<Col className="pt-3" xs={12} sm={6} lg={4}>
+						<p className="mb-2" style={{ height: 32 }}>
+							<ReactIcon style={{ height: "100%", color: "#62D4FA" }}/>
+						</p>
+						<h6 className="mb-2">React & React Native</h6>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</Col>
-					<Col xs={12} sm={6} lg={4}>
-						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<Col className="pt-3" xs={12} sm={6} lg={4}>
+						<p className="mb-2" style={{ height: 32 }}>
+							<PhpIcon className="pr-2" style={{ height: "100%", color: "#474A8A"}}/>
+							<LaravelIcon style={{ width: 24, color: "#ec4e43" }}/>
+						</p>
+						<h6 className="mb-2">PHP & Laravel</h6>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</Col>
-					<Col xs={12} sm={6} lg={4}>
-						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<Col className="pt-3" xs={12} sm={6} lg={4}>
+						<p className="mb-2" style={{ height: 32 }}>
+							<JavaIcon className="pr-2" style={{ height: "100%", color: "crimson" }}/>
+							<PythonIcon className="pr-2" style={{ height: "100%", color: "#456E9C" }}/>
+							<DBIcon style={{ width: 24, color: "darkgray" }}/>
+						</p>
+						<h6 className="mb-2">Other</h6>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					</Col>
 				</Row>
 				<Row className="pt-4">
@@ -113,7 +165,9 @@ const Content = () => {
 				</Row>
 				<Row>
 					<Col>
-						<p className="pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p className="pt-4">
+							I always try to make my projects make life easier for the target group or to be a form of entertainment or education for others. I like to share my knowledge and create small and large projects with other people from whom I can learn. I am not afraid of new challenges and I always try to create something interesting. You can see my biggest projects below to see more of my work check my profile on GitHub.
+						</p>
 					</Col>
 				</Row>
 				<Row className="justify-content-start ">
@@ -153,8 +207,27 @@ const Content = () => {
 				</Row>
 				<Row className="py-3">
 					<Col>
-						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p className="m-0">
+							If you are interested in collaboration with me or would like to ask something, you can use the form below, thanks to which your message will reach me as soon as possible.
+						</p>
 					</Col>
+				</Row>
+				<Row className="py-3">
+					<Col xs={12} sm={6}>
+						<Form.Control type="text" placeholder="Signature" />
+					</Col>
+					<Col className="pt-4 py-sm-0" xs={12} sm={6}>
+						<Form.Control type="text" placeholder="Your e-mail" />
+					</Col>
+					<Col className="pt-4" xs={12}>
+						<Form.Control as="textarea" style={{ minHeight: 120 }} placeholder="How can I help you?" />
+					</Col>
+					<Col className="text-center pt-4">
+						<Button variant="web-primary" style={{ color: "white" }}>SEND NOW</Button>
+					</Col>
+				</Row>
+				<Row>
+					<Col className="py-4"></Col>
 				</Row>
 			</Container>
 		</main>
