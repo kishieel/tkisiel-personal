@@ -1,9 +1,33 @@
 import React, { Component } from 'react';
 import { Jumbotron, Nav, Button, Card, Form, Container, Row, Col } from 'react-bootstrap'
 import profilePhoto from '../img/profile_photo_2.jpg'
-import { ReactComponent as GitIcon } from '../img/github-alt-brands.svg'
+import ezakrystiaLogo from '../img/ezakrystia_logo.png'
+import carrotGardenLogo from '../img/carrot_garden_logo.png'
+import lettersAndNumbersLogo from '../img/letters_and_numbers_logo.png'
+import locallyLogo from '../img/locally_logo.png'
+import carrotHRPhoto from '../img/carrot_hr_photo.png'
+import { ReactComponent as GitIcon, gitIcon } from '../img/github-alt-brands.svg'
 import { ReactComponent as LinkedInIcon } from '../img/linkedin-in-brands.svg'
 import { ReactComponent as MailIcon } from '../img/envelope-solid.svg'
+
+const ProjectCard = ( props ) => {
+	const { title, children, link, img } = props
+
+	return (<>
+		<Card className="mt-3" >
+			<a className="overflow-hidden p-3" href={ link } style={{ background: "#eee" }}>
+				<Card.Img className="card-img-animation" variant="top" src={ img }/>
+			</a>
+			<Card.Body>
+				<Card.Title>{ title }</Card.Title>
+				<Card.Text>{ children }</Card.Text>
+				<a className="d-block text-center" href={ link }>
+					<Button className="px-3" variant="web-primary" style={{ color: "#fff" }}>CHECK IT</Button>
+				</a>
+			</Card.Body>
+		</Card>
+	</>)
+}
 
 const SocialCircle = ( props ) => {
 	const { link, svg } = props
@@ -42,153 +66,106 @@ const Sidebar = () => {
 const Content = () => {
 	return (<>
 		<main className="content">
+			<Jumbotron>
+				<h1>Tomasz Kisiel</h1>
+				<div className="pt-2" style={{ fontSize: 26, fontWeight: 300 }}>Fullstack Web Developer</div>
+				<p className="pt-2">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				</p>
+				<Button className="px-3" variant="web-primary" style={{ color: "#fff" }}>CONTACT ME</Button>
+			</Jumbotron>
+
 			<Container fluid>
-				<Row className="py-3">
-					<Col md={ 5 } lg={ 3 }>
-						<div class="sticky-top">
-							<div class="nav flex-column">
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-							</div>
-						</div>
-					</Col>
+				<Row>
 					<Col>
-						<h1>Main Area</h1>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<h1 className="article-heading">Knowledge</h1>
+					</Col>
+				</Row>
+				<Row className="pt-3">
+					<Col>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					</Col>
+				</Row>
+				<Row>
+					<Col xs={12} sm={6} lg={4}>
+						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</Col>
+					<Col xs={12} sm={6} lg={4}>
+						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</Col>
+					<Col xs={12} sm={6} lg={4}>
+						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</Col>
+					<Col xs={12} sm={6} lg={4}>
+						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</Col>
+					<Col xs={12} sm={6} lg={4}>
+						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</Col>
+					<Col xs={12} sm={6} lg={4}>
+						<p className="pt-3 m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					</Col>
+				</Row>
+				<Row className="pt-4">
+					<Col>
+						<h1 className="article-heading">Fetured projects</h1>
 					</Col>
 				</Row>
 				<Row>
 					<Col>
-						<Jumbotron>
-							<h1>Tomasz Kisiel</h1>
-							<div className="pt-2" style={{ fontSize: 26, fontWeight: 300 }}>Fullstack Web Developer</div>
-							<p className="pt-2">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-							</p>
-						</Jumbotron>
+						<p className="pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 					</Col>
 				</Row>
-			</Container>
-
-			<Nav className="justify-content-end">
-				<Nav.Item>
-					<Nav.Link eventKey="about">About Me</Nav.Link>
-				</Nav.Item>
-				<Nav.Item>
-					<Nav.Link eventKey="projects">Fetured projects</Nav.Link>
-				</Nav.Item>
-				<Nav.Item>
-					<Nav.Link eventKey="contact">Contact</Nav.Link>
-				</Nav.Item>
-			</Nav>
-			<Container fluid>
-				<Row></Row>
-				<Row>
-					<Col className="px-0">
-
+				<Row className="justify-content-start ">
+					<Col xs={12} sm={6} lg={4} xl={3}>
+						<ProjectCard title="Locally [ WIP ]" img={ locallyLogo } link="https://github.com/evilghostgirl/locally-frontend-web">
+							Locally are free classifieds in many categories of everyday life. You will quickly find what you need here. You want to buy something - here you will find interesting deals, cheaper than in the store.
+						</ProjectCard>
+					</Col>
+					<Col xs={12} sm={6} lg={4} xl={3}>
+						<ProjectCard title="CarrotHR" img={ carrotHRPhoto } link="http://carrot-hr.tkisiel.pl">
+							An employee's intelligent working time planner, including the Polish working time system. Add new employees, customize to your needs your and create an optimized work plan.
+						</ProjectCard>
+					</Col>
+					<Col className="d-block d-lg-none d-xl-block" xs={12} sm={6} lg={4} xl={3}>
+						<ProjectCard title="Carrot Garden" img={ carrotGardenLogo } link="https://play.google.com/store/apps/details?id=pl.tkisiel.carrotgarden&gl=PL">
+							Fascinating game about picking carrots.. can there be anything better? It guarantees an unforgettable experience.. entertains and teaches along with the carrots obtained.<br/><br/>
+						</ProjectCard>
+					</Col>
+					<Col xs={12} sm={6} lg={4} xl={3}>
+						<ProjectCard title="eZakrystia.pl" img={ ezakrystiaLogo } link="https://demo2.ezakrystia.pl">
+								Veryfication system of the acolytes presence, includes a website for users and moderators, a mobile application and a mobile scanner based on Raspberry&nbsp;Pi.
+						</ProjectCard>
+					</Col>
+					<Col xs={ 12 }>
+						<h2 className="text-center pt-3" href="">
+							<a href="https://github.com/TomaszKisiel" style={{ color: "#212529" }}>
+								<GitIcon className="align-top mr-2" style={{ width: 36 }} fill="#212529"/>
+								Find more on my GitHub profile!
+							</a>
+						</h2>
+					</Col>
+				</Row>
+				<Row className="pt-4">
+					<Col>
+						<h1 className="article-heading">Contact me</h1>
 					</Col>
 				</Row>
 				<Row className="py-3">
-					<Col md={ 3 } lg={ 2 }>
-						<div class="sticky-top">
-							<div class="nav flex-column">
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-								<a href="#_" class="nav-link">Link</a>
-							</div>
-						</div>
-					</Col>
 					<Col>
-						<h1>Main Area</h1>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p className="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 					</Col>
-				</Row>
-				<Row className="justify-content-center ">
-				<Col xs={ "auto" }>
-					<Card style={{ width: '18rem' }}>
-						<Card.Img variant="top" src={ profilePhoto } />
-						<Card.Body>
-							<Card.Title>Card Title</Card.Title>
-							<Card.Text>
-							Some quick example text to build on the card title and make up the bulk of
-							the card's content.
-							</Card.Text>
-							<Button variant="primary">CHECK IT</Button>
-						</Card.Body>
-					</Card>
-				</Col><Col xs={ "auto" }>
-					<Card style={{ width: '18rem' }}>
-						<Card.Img variant="top" src={ profilePhoto } />
-						<Card.Body>
-							<Card.Title>Card Title</Card.Title>
-							<Card.Text>
-							Some quick example text to build on the card title and make up the bulk of
-							the card's content.
-							</Card.Text>
-							<Button variant="primary">CHECK IT</Button>
-						</Card.Body>
-					</Card>
-				</Col><Col xs={ "auto" }>
-					<Card style={{ width: '18rem' }}>
-						<Card.Img variant="top" src={ profilePhoto } />
-						<Card.Body>
-							<Card.Title>Card Title</Card.Title>
-							<Card.Text>
-							Some quick example text to build on the card title and make up the bulk of
-							the card's content.
-							</Card.Text>
-							<Button variant="primary">CHECK IT</Button>
-						</Card.Body>
-					</Card>
-				</Col><Col xs={ "auto" }>
-					<Card style={{ width: '18rem' }}>
-						<Card.Img variant="top" src={ profilePhoto } />
-						<Card.Body>
-							<Card.Title>Card Title</Card.Title>
-							<Card.Text>
-							Some quick example text to build on the card title and make up the bulk of
-							the card's content.
-							</Card.Text>
-							<Button variant="primary">CHECK IT</Button>
-						</Card.Body>
-					</Card>
-				</Col><Col xs={ "auto" }>
-					<Card style={{ width: '18rem' }}>
-						<Card.Img variant="top" src={ profilePhoto } />
-						<Card.Body>
-							<Card.Title>Card Title</Card.Title>
-							<Card.Text>
-							Some quick example text to build on the card title and make up the bulk of
-							the card's content.
-							</Card.Text>
-							<Button variant="primary">CHECK IT</Button>
-						</Card.Body>
-					</Card>
-				</Col><Col xs={ "auto" }>
-					<Card style={{ width: '18rem' }}>
-						<Card.Img variant="top" src={ profilePhoto } />
-						<Card.Body>
-							<Card.Title>Card Title</Card.Title>
-							<Card.Text>
-							Some quick example text to build on the card title and make up the bulk of
-							the card's content.
-							</Card.Text>
-							<Button variant="primary">CHECK IT</Button>
-						</Card.Body>
-					</Card>
-				</Col>
 				</Row>
 			</Container>
 		</main>
 	</>)
 }
+
+// <Col xs={ "auto" } xs={12} sm={6} lg={4} xl={3}>
+// 	<ProjectCard title="Letters and Numbers" img={ lettersAndNumbersLogo } link="https://play.google.com/store/apps/details?id=pl.tkisiel.literyicyfry&gl=PL">
+// 		Letters and Numbers is a simple mobile game that diversifies the learning of alphabet characters, simple words and mathematical operations such as addition and subtraction on numbers.
+// 	</ProjectCard>
+// </Col>
 
 class App extends Component {
 	render() {
@@ -198,24 +175,5 @@ class App extends Component {
 		</>);
 	}
 }
-
-// <div class="row">
-//   <div class="col-3">
-//     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-//       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-//       <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-//       <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-//       <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-//     </div>
-//   </div>
-//   <div class="col-9">
-//     <div class="tab-content" id="v-pills-tabContent">
-//       <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-//       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-//       <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-//       <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-//     </div>
-//   </div>
-// </div>
 
 export default App;
