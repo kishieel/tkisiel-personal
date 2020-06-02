@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
+import ContactResponse from './ContactResponse'
 
 const ContactMe = ( props ) => {
 	const [ validated, setValidated ] = useState(false);
@@ -15,26 +16,34 @@ const ContactMe = ( props ) => {
 		const payload = { signature, email, message }
 		const form = e.currentTarget
 		if ( form.checkValidity() === true ) {
-			fetch('https://tkisiel.pl/send', {
-				method: "POST",
-				body: JSON.stringify( payload ),
-				headers: {
-					'Accept': 'application/json',
-					'Content-Type': 'application/json'
-				},
-			}).then( ( res ) => ( res.json() ) )
-			.then( ( res ) => {
-				if ( res.status === "success" ) {
-					setSignature("")
-					setEmail("")
-					setMessage("")
-					setSended(true)
+			(async () => {
+				await fetch('https://tkisiel.pl/send/', {
+					method: 'POST',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					redirect: 'follow',
+					body: JSON.stringify( payload ),
+				}).then( ( res ) => ( res.json() ) )
+				.then( ( res ) => {
+					if ( res.status === "success" ) {
+						setSignature("")
+						setEmail("")
+						setMessage("")
+						setSended(true)
+						setValidated(false)
+					} else {
+						setSended(false)
+						setValidated(false)
+					}
+				}).catch( () => {
+					setSended(false)
 					setValidated(false)
-				}
-			}).catch( () => {
-				setSended(false)
-				setValidated(false)
-			})
+				})
+
+				setTimeout( () => setSended(null), 10000 )
+			})()
 		}
 
 		setValidated(true)
@@ -55,28 +64,24 @@ const ContactMe = ( props ) => {
 		</Row>
 		<Form validated={ validated } onSubmit={ handleSubmit } noValidate>
 			<Row className="py-3">
+				<ContactResponse success={ sended } />
 				<Col xs={12} sm={6}>
 					<Form.Control type="text" placeholder="Signature" value={ signature } onChange={ (e) => setSignature( e.target.value )} size="lg" required/>
 					<Form.Control.Feedback type="invalid">
 		            	Please provide your signature..
 		          	</Form.Control.Feedback>
 				</Col>
-				<Col className="pt-4 py-sm-0" xs={12} sm={6}>
+				<Col className="pt-3 py-sm-0" xs={12} sm={6}>
 					<Form.Control type="email" placeholder="Your e-mail" value={ email } onChange={ (e) => setEmail( e.target.value )} size="lg" required/>
 					<Form.Control.Feedback type="invalid">
 		            	Please provide a valid email address.
 		          	</Form.Control.Feedback>
 				</Col>
-				<Col className="pt-4" xs={12}>
+				<Col className="pt-3" xs={12}>
 					<Form.Control as="textarea" style={{ minHeight: 120 }} placeholder="How can I help you?" value={ message } onChange={ (e) => setMessage( e.target.value )} size="lg" required/>
 					<Form.Control.Feedback type="invalid">
 		            	Please provide what you expected from me.
 		          	</Form.Control.Feedback>
-				</Col>
-				<Col xs={12}>
-					<Form.Control.Feedback className={ sended === null ? "d-none text-center" : "d-block text-center" } type={ sended === true ? "valid" : "invalid" }>
-						<b>{ sended === true ? "Successfully sended message. Please wait for my replay :)" : "Unfortunately something went wrong. Please try to contact with my by my social media." }</b>
-					</Form.Control.Feedback>
 				</Col>
 				<Col className="text-center pt-4">
 					<Button type="submit" variant="web-primary" style={{ color: "white" }} size="lg" >SEND NOW</Button>
