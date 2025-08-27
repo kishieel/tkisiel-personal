@@ -16,10 +16,10 @@
 	"dependencies": {
 	    "react": "^16.13.1",
 	    "react-dom": "^16.13.1",
-	    "react-scripts": "3.4.1",
+	    "react-scripts": "5.0.1",
 		"bootstrap": "^4.5.0",
 		"react-bootstrap": "^1.0.1",
-		"node-sass": "^4.14.1"
+		"node-sass": "^9.0.0"
 	},
     "eslintConfig": {
       "extends": "react-app"
